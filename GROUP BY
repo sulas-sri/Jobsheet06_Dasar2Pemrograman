@@ -6,4 +6,140 @@ ipl_data = {'Team' : ['Riders', 'Riders', 'Devils', 'Devils', 'Kings',
 'Kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
 'Rank' : [1, 2, 2, 3, 3, 4, 1, 1, 2, 4, 1, 2],
 'Year' : [2014, 2015, 2014, 2015, 2014, 2015, 2016, 2017, 2016, 2014, 2015, 2017],
-'points' : }
+'Points' : [876, 789, 863, 673, 741, 812, 756, 788, 694, 701, 804, 690] }
+df = pd.DataFrame(ipl_data)
+
+print (df)
+
+# 2. View Groups
+# import the pandas Library
+import pandas as pd
+
+ipl_data = {'Team' : ['Riders', 'Riders', 'Devils', 'Devils', 'Kings', 
+'Kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
+'Rank' : [1, 2, 2, 3, 3, 4, 1, 1, 2, 4, 1, 2],
+'Year' : [2014, 2015, 2014, 2015, 2014, 2015, 2016, 2017, 2016, 2014, 2015, 2017],
+'Points' : [876, 789, 863, 673, 741, 812, 756, 788, 694, 701, 804, 690] }
+df = pd.DataFrame(ipl_data)
+
+print (df.groupby ('Team'). groups)
+
+# 3. Group by with multiple columns
+# import the pandas Library
+import pandas as pd
+
+ipl_data = {'Team' : ['Riders', 'Riders', 'Devils', 'Devils', 'Kings', 
+'Kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
+'Rank' : [1, 2, 2, 3, 3, 4, 1, 1, 2, 4, 1, 2],
+'Year' : [2014, 2015, 2014, 2015, 2014, 2015, 2016, 2017, 2016, 2014, 2015, 2017],
+'Points' : [876, 789, 863, 673, 741, 812, 756, 788, 694, 701, 804, 690] }
+df = pd.DataFrame(ipl_data)
+
+print (df.groupby (['Team', 'Year']). groups)
+
+# 4. Iterating through Groups
+# import the pandas Library
+import pandas as pd
+
+ipl_data = {'Team' : ['Riders', 'Riders', 'Devils', 'Devils', 'Kings', 
+'Kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
+'Rank' : [1, 2, 2, 3, 3, 4, 1, 1, 2, 4, 1, 2],
+'Year' : [2014, 2015, 2014, 2015, 2014, 2015, 2016, 2017, 2016, 2014, 2015, 2017],
+'Points' : [876, 789, 863, 673, 741, 812, 756, 788, 694, 701, 804, 690] }
+df = pd.DataFrame(ipl_data)
+
+grouped = df.groupby('Year')
+
+for name, group in grouped:
+    print (name)
+    print (group)
+    
+# 5. Select a Group
+# import the pandas Library
+import pandas as pd
+
+ipl_data = {'Team' : ['Riders', 'Riders', 'Devils', 'Devils', 'Kings', 
+'Kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
+'Rank' : [1, 2, 2, 3, 3, 4, 1, 1, 2, 4, 1, 2],
+'Year' : [2014, 2015, 2014, 2015, 2014, 2015, 2016, 2017, 2016, 2014, 2015, 2017],
+'Points' : [876, 789, 863, 673, 741, 812, 756, 788, 694, 701, 804, 690] }
+df = pd.DataFrame(ipl_data)
+
+grouped = df.groupby('Year')
+print (grouped.get_group(2014))
+
+# 6. Aggregations
+# import the pandas Library
+import pandas as pd
+import numpy as np
+
+ipl_data = {'Team' : ['Riders', 'Riders', 'Devils', 'Devils', 'Kings', 
+'Kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
+'Rank' : [1, 2, 2, 3, 3, 4, 1, 1, 2, 4, 1, 2],
+'Year' : [2014, 2015, 2014, 2015, 2014, 2015, 2016, 2017, 2016, 2014, 2015, 2017],
+'Points' : [876, 789, 863, 673, 741, 812, 756, 788, 694, 701, 804, 690] }
+df = pd.DataFrame(ipl_data)
+
+grouped = df.groupby('Year')
+print (grouped['Points'].agg(np.mean))
+
+print("\n")
+
+import pandas as pd
+import numpy as np
+
+ipl_data = {'Team' : ['Riders', 'Riders', 'Devils', 'Devils', 'Kings', 
+'Kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
+'Rank' : [1, 2, 2, 3, 3, 4, 1, 1, 2, 4, 1, 2],
+'Year' : [2014, 2015, 2014, 2015, 2014, 2015, 2016, 2017, 2016, 2014, 2015, 2017],
+'Points' : [876, 789, 863, 673, 741, 812, 756, 788, 694, 701, 804, 690] }
+df = pd.DataFrame(ipl_data)
+
+# Attribute Access in Python Pandas
+grouped = df.groupby('Team')
+print (grouped.agg(np.size))
+
+# 7. Menerapkan Banyak Fungsi Agregasi Sekaligus
+# import the pandas Library
+import pandas as pd
+import numpy as np
+
+ipl_data = {'Team' : ['Riders', 'Riders', 'Devils', 'Devils', 'Kings', 
+'Kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
+'Rank' : [1, 2, 2, 3, 3, 4, 1, 1, 2, 4, 1, 2],
+'Year' : [2014, 2015, 2014, 2015, 2014, 2015, 2016, 2017, 2016, 2014, 2015, 2017],
+'Points' : [876, 789, 863, 673, 741, 812, 756, 788, 694, 701, 804, 690] }
+df = pd.DataFrame(ipl_data)
+
+grouped = df.groupby('Team')
+print (grouped['Points'].agg([np.sum, np.mean, np.std]))
+
+# 8. Transformations
+# import the pandas Library
+import pandas as pd
+import numpy as np
+
+ipl_data = {'Team' : ['Riders', 'Riders', 'Devils', 'Devils', 'Kings', 
+'Kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
+'Rank' : [1, 2, 2, 3, 3, 4, 1, 1, 2, 4, 1, 2],
+'Year' : [2014, 2015, 2014, 2015, 2014, 2015, 2016, 2017, 2016, 2014, 2015, 2017],
+'Points' : [876, 789, 863, 673, 741, 812, 756, 788, 694, 701, 804, 690] }
+df = pd.DataFrame(ipl_data)
+
+grouped = df.groupby('Team')
+score = lamda x: (x - x.mean()) / x.std()*10
+print (grouped.transform(score))
+
+# 9. Filrations
+import pandas as pd
+import numpy as np
+
+ipl_data = {'Team' : ['Riders', 'Riders', 'Devils', 'Devils', 'Kings', 
+'Kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
+'Rank' : [1, 2, 2, 3, 3, 4, 1, 1, 2, 4, 1, 2],
+'Year' : [2014, 2015, 2014, 2015, 2014, 2015, 2016, 2017, 2016, 2014, 2015, 2017],
+'Points' : [876, 789, 863, 673, 741, 812, 756, 788, 694, 701, 804, 690] }
+df = pd.DataFrame(ipl_data)
+
+print (df.groupby('Team').filter(lamda x: len(x) >= 3))
+
