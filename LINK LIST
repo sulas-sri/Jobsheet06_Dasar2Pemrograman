@@ -5,5 +5,5 @@ def add(x):
     
 funcs = [multiply, add]
 for i in range(5):
-    value = list(map(lamda x: x(i), funcs))
+    value = list(map(lambda x: x(i), funcs))
     print(value)
