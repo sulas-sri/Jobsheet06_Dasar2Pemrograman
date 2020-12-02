@@ -127,7 +127,7 @@ ipl_data = {'Team' : ['Riders', 'Riders', 'Devils', 'Devils', 'Kings',
 df = pd.DataFrame(ipl_data)
 
 grouped = df.groupby('Team')
-score = lamda x: (x - x.mean()) / x.std()*10
+score = lambda x: (x - x.mean()) / x.std()*10
 print (grouped.transform(score))
 
 # 9. Filrations
@@ -141,5 +141,5 @@ ipl_data = {'Team' : ['Riders', 'Riders', 'Devils', 'Devils', 'Kings',
 'Points' : [876, 789, 863, 673, 741, 812, 756, 788, 694, 701, 804, 690] }
 df = pd.DataFrame(ipl_data)
 
-print (df.groupby('Team').filter(lamda x: len(x) >= 3))
+print (df.groupby('Team').filter(lambda x: len(x) >= 3))
 
