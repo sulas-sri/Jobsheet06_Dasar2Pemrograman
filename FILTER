@@ -10,5 +10,5 @@ def filter_vocal(alfabet):
        
 vocal_terfilter = filter(filter_vocal, alfabet)
 print('Huruf vocal yang tersaring adalah: ')
-for vocal in vokal_terfilter:
+for vocal in vocal_terfilter:
     print(vocal)
